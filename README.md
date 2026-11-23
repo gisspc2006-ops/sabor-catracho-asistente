@@ -2,7 +2,7 @@
 
 Asistente conversacional para **Sabor Catracho**, una tienda en línea de chucherías y productos típicos hondureños dirigida a familias que quieren enviar productos a sus seres queridos en Estados Unidos. El asistente recomienda productos del catálogo, calcula totales según el presupuesto del cliente y permite agregar los productos a la carreta con un clic.
 
-**Sitio en vivo:** https://TU-SITIO.netlify.app
+**Sitio en vivo:** https://saborcatrachoexpress.netlify.app
 **Proyecto integrador** – Inteligencia Artificial Aplicada, Universidad Tecnológica de Honduras.
 
 ## Qué hace
@@ -11,6 +11,7 @@ Asistente conversacional para **Sabor Catracho**, una tienda en línea de chuche
 - Sugiere combos según el presupuesto del cliente y muestra tarjetas de producto con botón **Agregar**.
 - Si no sabe algo (envíos, pagos, plazos), lo dice y remite al WhatsApp de la tienda.
 - Los precios de las tarjetas salen del archivo `data/catalogo.json`, no de lo que escribe el modelo.
+- Si el cliente escribe un presupuesto (por ejemplo "L 500"), el código suma los precios y quita los productos que lo excedan, porque el modelo a veces se equivoca sumando.
 
 ## Cómo se usa
 
@@ -65,4 +66,6 @@ La clave **nunca** está en el código ni en el navegador. En producción se gua
 
 - El asistente puede equivocarse; no sustituye la confirmación del pedido por WhatsApp.
 - El límite de mensajes por usuario es básico y no reemplaza un control de costos real.
+- Solo reconoce presupuestos escritos como "L 500", "Lps 500" o "500 lempiras".
+- Si la API de Gemini falla de forma temporal, el chat muestra un aviso y no reintenta solo.
 - No recuerda la conversación al recargar la página.
