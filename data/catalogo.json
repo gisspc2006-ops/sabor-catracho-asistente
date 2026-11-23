@@ -1,0 +1,170 @@
+[
+  {
+    "id": "p01",
+    "nombre": "Kola Champán",
+    "categoria": "Refrescos",
+    "presentacion": "Botella de vidrio 355 ml",
+    "precio_lempiras": 40.0
+  },
+  {
+    "id": "p02",
+    "nombre": "Naranja en botella",
+    "categoria": "Refrescos",
+    "presentacion": "Botella de vidrio 355 ml",
+    "precio_lempiras": 40.0
+  },
+  {
+    "id": "p03",
+    "nombre": "Manzana en botella",
+    "categoria": "Refrescos",
+    "presentacion": "Botella de vidrio 355 ml",
+    "precio_lempiras": 40.0
+  },
+  {
+    "id": "p04",
+    "nombre": "Uva en botella",
+    "categoria": "Refrescos",
+    "presentacion": "Botella de vidrio 355 ml",
+    "precio_lempiras": 40.0
+  },
+  {
+    "id": "p05",
+    "nombre": "Fresa en botella",
+    "categoria": "Refrescos",
+    "presentacion": "Botella de vidrio 355 ml",
+    "precio_lempiras": 40.0
+  },
+  {
+    "id": "p06",
+    "nombre": "Curtido en frasco",
+    "categoria": "Conservas",
+    "presentacion": "Repollo en vinagre, 16 oz",
+    "precio_lempiras": 115.0
+  },
+  {
+    "id": "p07",
+    "nombre": "Chile jalapeño en vinagre",
+    "categoria": "Conservas",
+    "presentacion": "Frasco 12 oz",
+    "precio_lempiras": 100.0
+  },
+  {
+    "id": "p08",
+    "nombre": "Frijoles rojos fritos",
+    "categoria": "Conservas",
+    "presentacion": "Lata 15 oz",
+    "precio_lempiras": 60.0
+  },
+  {
+    "id": "p09",
+    "nombre": "Mango en almíbar",
+    "categoria": "Conservas",
+    "presentacion": "Frasco 16 oz",
+    "precio_lempiras": 110.0
+  },
+  {
+    "id": "p10",
+    "nombre": "Piña en almíbar",
+    "categoria": "Conservas",
+    "presentacion": "Lata 20 oz",
+    "precio_lempiras": 85.0
+  },
+  {
+    "id": "p11",
+    "nombre": "Salsa criolla",
+    "categoria": "Conservas",
+    "presentacion": "Frasco 12 oz",
+    "precio_lempiras": 90.0
+  },
+  {
+    "id": "p12",
+    "nombre": "Cajeta de leche",
+    "categoria": "Lácteos",
+    "presentacion": "Dulce artesanal, 8 oz",
+    "precio_lempiras": 105.0
+  },
+  {
+    "id": "p13",
+    "nombre": "Dulce de leche",
+    "categoria": "Lácteos",
+    "presentacion": "Tarro 10 oz",
+    "precio_lempiras": 115.0
+  },
+  {
+    "id": "p14",
+    "nombre": "Leche en polvo",
+    "categoria": "Lácteos",
+    "presentacion": "Bolsa 400 g",
+    "precio_lempiras": 155.0
+  },
+  {
+    "id": "p15",
+    "nombre": "Rosquitas de queso",
+    "categoria": "Lácteos",
+    "presentacion": "Bolsa 8 oz",
+    "precio_lempiras": 90.0
+  },
+  {
+    "id": "p16",
+    "nombre": "Tajadas de plátano",
+    "categoria": "Snacks",
+    "presentacion": "Bolsa 6 oz",
+    "precio_lempiras": 65.0
+  },
+  {
+    "id": "p17",
+    "nombre": "Yuca frita",
+    "categoria": "Snacks",
+    "presentacion": "Bolsa 6 oz",
+    "precio_lempiras": 70.0
+  },
+  {
+    "id": "p18",
+    "nombre": "Rosquillas",
+    "categoria": "Snacks",
+    "presentacion": "Bolsa 8 oz",
+    "precio_lempiras": 85.0
+  },
+  {
+    "id": "p19",
+    "nombre": "Tostadas de maíz",
+    "categoria": "Snacks",
+    "presentacion": "Bolsa 10 oz",
+    "precio_lempiras": 65.0
+  },
+  {
+    "id": "p20",
+    "nombre": "Dulce de tamarindo",
+    "categoria": "Snacks",
+    "presentacion": "Bolsa 6 unidades",
+    "precio_lempiras": 80.0
+  },
+  {
+    "id": "p21",
+    "nombre": "Café molido Honduras",
+    "categoria": "Café",
+    "presentacion": "Bolsa 1 lb",
+    "precio_lempiras": 245.0
+  },
+  {
+    "id": "p22",
+    "nombre": "Café en grano tostado",
+    "categoria": "Café",
+    "presentacion": "Bolsa 1 lb",
+    "precio_lempiras": 275.0
+  },
+  {
+    "id": "p23",
+    "nombre": "Café soluble",
+    "categoria": "Café",
+    "presentacion": "Frasco 7 oz",
+    "precio_lempiras": 195.0
+  },
+  {
+    "id": "p24",
+    "nombre": "Panela en polvo",
+    "categoria": "Café",
+    "presentacion": "Bolsa 1 lb",
+    "precio_lempiras": 85.0
+  }
+]

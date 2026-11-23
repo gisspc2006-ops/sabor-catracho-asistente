@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sabor Catracho – Chucherías de Honduras para tu familia en EE. UU.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F7FA;--surface:#FFFFFF;--ink:#10263B;--muted:#53677A;--blue:#1456A0;--sun:#F4B73C;--coral:#D9482B;--line:#D5E1EA;--on-blue:#FFFFFF;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0C1824;--surface:#132536;--ink:#EAF1F7;--muted:#9FB3C4;--blue:#6BAEF0;--sun:#F4B73C;--coral:#F07B5F;--line:#26405A;--on-blue:#0C1824}}
+:root[data-theme="dark"]{--bg:#0C1824;--surface:#132536;--ink:#EAF1F7;--muted:#9FB3C4;--blue:#6BAEF0;--sun:#F4B73C;--coral:#F07B5F;--line:#26405A;--on-blue:#0C1824}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;line-height:1.55}
+h1,h2,h3{font-family:'Bricolage Grotesque','DM Sans',system-ui,sans-serif;line-height:1.1;margin:0}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.25rem}
+.cartbtn{background:var(--blue);color:var(--on-blue);border:0;border-radius:999px;padding:9px 18px;font-weight:700}
+.hero{padding:56px 0 40px}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:800;max-width:15ch}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:52ch;margin:18px 0 26px}
+.cta{display:inline-block;background:var(--sun);color:#10263B;font-weight:700;border:0;border-radius:10px;padding:13px 24px;text-decoration:none}
+.flagbar{height:10px;background:linear-gradient(var(--blue) 0 33%,#fff 33% 66%,var(--blue) 66%);border-block:1px solid var(--line)}
+.notes{display:grid;grid-template-columns:minmax(230px,420px);gap:14px;padding:30px 0}
+.notes div{border-left:4px solid var(--sun);padding:4px 0 4px 14px;color:var(--muted)}
+.notes b{color:var(--ink);display:block}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 22px}
+.tab{background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px}
+.tab[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+h2.sec{font-size:1.9rem;margin-top:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px;padding-bottom:50px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.pic{height:120px;display:grid;place-items:center;font-size:3.4rem;background:var(--c)}
+.card .b{padding:14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-size:1.05rem}
+.card small{color:var(--muted)}
+.card .row{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding-top:8px}
+.price{font-weight:700;font-size:1.1rem}
+.add{background:var(--blue);color:var(--on-blue);border:0;border-radius:8px;padding:8px 14px;font-weight:700}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.92rem}
+.overlay{position:fixed;inset:0;background:rgba(5,15,25,.55);display:none;z-index:9}
+.overlay.on{display:block}
+aside{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--surface);z-index:10;transform:translateX(100%);transition:transform .25s;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+aside.on{transform:none}
+@media(prefers-reduced-motion:reduce){aside{transition:none}html{scroll-behavior:auto}}
+.ah{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)}
+.ah button{background:none;border:0;color:var(--ink);font-size:1.6rem}
+.ab{padding:16px 20px;overflow-y:auto;flex:1}
+.item{display:grid;grid-template-columns:1fr auto;gap:4px 10px;padding:10px 0;border-bottom:1px solid var(--line)}
+.qty{display:flex;align-items:center;gap:8px;grid-column:1/3}
+.qty button{width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.qty .rm{width:auto;padding:0 10px;margin-left:auto;color:var(--coral)}
+.empty{color:var(--muted);padding:30px 0;text-align:center}
+fieldset{border:1px solid var(--line);border-radius:10px;margin:16px 0 0;padding:12px}
+legend{font-weight:700;padding:0 6px}
+label{display:block;font-size:.9rem;margin-top:8px}
+input,textarea{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit}
+.opt{display:flex;gap:8px;align-items:center;margin-top:6px}
+.opt input{width:auto}
+.af{padding:16px 20px;border-top:1px solid var(--line)}
+.tot{display:flex;justify-content:space-between;font-weight:700;font-size:1.15rem}
+.af p{font-size:.82rem;color:var(--muted);margin:6px 0 12px}
+.send{display:block;text-align:center;background:var(--coral);color:#fff;font-weight:700;text-decoration:none;border-radius:10px;padding:13px}
+.send[aria-disabled=true]{opacity:.45;pointer-events:none}
+.adminp{position:fixed;inset:0;z-index:20;background:var(--bg);overflow:auto;padding:calc(16px + env(safe-area-inset-top,0px)) 20px 30px}
+.adminp[hidden],#adm[hidden]{display:none}
+.atools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:14px 0}
+.atools .cta{border:0;cursor:pointer}
+.ghost{background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px 20px}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:.9rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--surface)}
+.ok{color:var(--blue);font-weight:700;padding:30px 0;text-align:center}
+
+#chatfab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:6;background:var(--blue);color:var(--on-blue);border:0;border-radius:999px;padding:13px 20px;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,.28)}
+#chat{position:fixed;right:18px;bottom:calc(78px + env(safe-area-inset-bottom,0px));width:min(400px,calc(100vw - 24px));height:min(600px,calc(100% - 110px));background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.3);display:none;flex-direction:column;z-index:7;overflow:hidden}
+#chat.on{display:flex}
+.chh{background:var(--blue);color:var(--on-blue);padding:12px 16px;display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.chh b{display:block;font-family:'Bricolage Grotesque','DM Sans',sans-serif;font-size:1.05rem}
+.chh small{opacity:.9;font-size:.78rem}
+.chh button{background:none;border:0;color:inherit;font-size:1.6rem;line-height:1;padding:0 4px}
+#chatlog{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
+.msg{max-width:88%;padding:9px 12px;border-radius:14px;white-space:pre-wrap;font-size:.95rem;overflow-wrap:anywhere}
+.msg.bot{background:var(--bg);border:1px solid var(--line);align-self:flex-start}
+.msg.user{background:var(--blue);color:var(--on-blue);align-self:flex-end}
+.msg.wait{opacity:.7;font-style:italic}
+.pcard{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:10px;padding:8px;background:var(--surface);align-self:stretch}
+.pcard .pe{width:42px;height:42px;border-radius:8px;display:grid;place-items:center;font-size:1.5rem;background:var(--c);flex:none}
+.pcard .pi{flex:1;min-width:0}
+.pcard .pi b{display:block;font-size:.9rem}
+.pcard .pi span{font-size:.8rem;color:var(--muted)}
+.chtools{display:flex;gap:8px;padding:8px 14px 0;flex-wrap:wrap}
+.chtools button,.chtools a{font-size:.82rem;border-radius:999px;padding:6px 12px;text-decoration:none;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.chtools a{background:#1F9D55;border-color:#1F9D55;color:#fff;font-weight:700}
+.chnote{font-size:.74rem;color:var(--muted);padding:6px 14px 0}
+.chform{display:flex;gap:8px;padding:10px 14px 14px}
+@media(max-width:480px){#chat{right:8px;left:8px;width:auto}}
+@media(prefers-reduced-motion:no-preference){#chat.on{animation:chin .18s ease-out}}
+@keyframes chin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+<header class="top"><div class="wrap"><span class="logo">Sabor Catracho</span><span><button class="cartbtn" id="adm" hidden style="background:var(--sun);color:#10263B;margin-right:8px">Pedidos</button><button class="cartbtn" id="open">Carreta (<span id="cnt">0</span>)</button></span></div></header>
+<main>
+<section class="wrap hero">
+<h1>Un pedacito de Honduras para quien extrañas</h1>
+<p>Elige las chucherías de siempre, arma la carreta y nosotros las preparamos para que lleguen a tu familia en Estados Unidos, en caja sencilla o envueltas como regalo.</p>
+<a class="cta" href="#catalogo">Ver productos</a>
+</section>
+<div class="flagbar"></div>
+<section class="wrap notes">
+<div><b>Con o sin regalo</b>Caja sencilla o envoltura de regalo, tú decides.</div>
+</section>
+<section class="wrap" id="catalogo">
+<h2 class="sec">Catálogo</h2>
+<div class="tabs" id="tabs" role="group" aria-label="Categorías"></div>
+<div class="grid" id="grid"></div>
+</section>
+</main>
+<footer><div class="wrap">Los precios son de ejemplo y están en lempiras. El impuesto y el costo de envío se calculan al procesar el pedido.</div></footer>
+
+<div class="overlay" id="ov"></div>
+<aside id="drawer" aria-label="Carreta de compras" aria-hidden="true">
+<div class="ah"><h2>Tu carreta</h2><button id="close" aria-label="Cerrar carreta">×</button></div>
+<div class="ab">
+<div id="items"></div>
+<fieldset><legend>Quién envía</legend>
+<label>Nombre<input id="from" autocomplete="name"></label>
+<label>Teléfono<input id="tel" type="tel" autocomplete="tel"></label>
+</fieldset>
+<fieldset><legend>Quién recibe en EE. UU.</legend>
+<label>Nombre<input id="to"></label>
+<label>Dirección completa<textarea id="addr" rows="2"></textarea></label>
+</fieldset>
+<fieldset><legend>Presentación</legend>
+<div class="opt"><input type="radio" name="pk" id="p1" value="Caja sencilla" checked><label for="p1" style="margin:0">Caja sencilla</label></div>
+<div class="opt"><input type="radio" name="pk" id="p2" value="Envuelto como regalo"><label for="p2" style="margin:0">Envuelto como regalo</label></div>
+<label>Mensaje para la tarjeta (opcional)<textarea id="msg" rows="2"></textarea></label>
+</fieldset>
+</div>
+<div class="af">
+<div class="tot"><span>Subtotal</span><span id="sub">L 0.00</span></div>
+<p>Al procesar el pedido se suman el impuesto y el envío.</p>
+<a class="send" id="send" href="#" target="_blank" rel="noopener" aria-disabled="true">Enviar pedido por WhatsApp</a>
+</div>
+</aside>
+
+<section class="adminp" id="admin" hidden aria-label="Panel de pedidos">
+<div class="wrap"><h2>Pedidos recibidos</h2>
+<div class="atools"><button class="cta" id="xl">Descargar Excel</button><button class="ghost" id="aclose">Volver a la tienda</button><span id="acount"></span></div>
+<div class="tw" id="atab"></div></div>
+</section>
+<script>
+var WHATSAPP="50496160053"; // número del negocio, con código de país y sin signos
+var P=[
+["Refrescos","Kola Champán","Botella de vidrio 355 ml","40.00","🍾","#FBE3E0"],
+["Refrescos","Naranja en botella","Botella de vidrio 355 ml","40.00","🍊","#FDE9C7"],
+["Refrescos","Manzana en botella","Botella de vidrio 355 ml","40.00","🍎","#FBE3E0"],
+["Refrescos","Uva en botella","Botella de vidrio 355 ml","40.00","🍇","#E6DDF5"],
+["Refrescos","Fresa en botella","Botella de vidrio 355 ml","40.00","🍓","#FBE3E0"],
+["Conservas","Curtido en frasco","Repollo en vinagre, 16 oz","115.00","🥬","#DDF0DC"],
+["Conservas","Chile jalapeño en vinagre","Frasco 12 oz","100.00","🌶️","#FBE3E0"],
+["Conservas","Frijoles rojos fritos","Lata 15 oz","60.00","🫘","#F0E0D4"],
+["Conservas","Mango en almíbar","Frasco 16 oz","110.00","🥭","#FDE9C7"],
+["Conservas","Piña en almíbar","Lata 20 oz","85.00","🍍","#FDF3C4"],
+["Conservas","Salsa criolla","Frasco 12 oz","90.00","🍅","#FBE3E0"],
+["Lácteos","Cajeta de leche","Dulce artesanal, 8 oz","105.00","🍮","#FDE9C7"],
+["Lácteos","Dulce de leche","Tarro 10 oz","115.00","🥛","#F5EEE0"],
+["Lácteos","Leche en polvo","Bolsa 400 g","155.00","🥛","#E1EEF8"],
+["Lácteos","Rosquitas de queso","Bolsa 8 oz","90.00","🧀","#FDF3C4"],
+["Snacks","Tajadas de plátano","Bolsa 6 oz","65.00","🍌","#FDF3C4"],
+["Snacks","Yuca frita","Bolsa 6 oz","70.00","🥔","#F5EEE0"],
+["Snacks","Rosquillas","Bolsa 8 oz","85.00","🍩","#FDE9C7"],
+["Snacks","Tostadas de maíz","Bolsa 10 oz","65.00","🌽","#FDF3C4"],
+["Snacks","Dulce de tamarindo","Bolsa 6 unidades","80.00","🍬","#F0E0D4"],
+["Café","Café molido Honduras","Bolsa 1 lb","245.00","☕","#EAD9CC"],
+["Café","Café en grano tostado","Bolsa 1 lb","275.00","🫘","#EAD9CC"],
+["Café","Café soluble","Frasco 7 oz","195.00","☕","#EAD9CC"],
+["Café","Panela en polvo","Bolsa 1 lb","85.00","🍯","#FDE9C7"]
+].map(function(a,i){return{id:i,cat:a[0],n:a[1],d:a[2],p:+a[3],e:a[4],c:a[5]}});
+var cats=["Todos"].concat(P.map(function(x){return x.cat}).filter(function(v,i,a){return a.indexOf(v)==i}));
+var cur="Todos",cart={};
+var $=function(id){return document.getElementById(id)};
+var money=function(n){return "L "+n.toFixed(2)};
+function tabs(){$("tabs").innerHTML=cats.map(function(c){return '<button class="tab" aria-pressed="'+(c==cur)+'" data-c="'+c+'">'+c+'</button>'}).join("")}
+function grid(){$("grid").innerHTML=P.filter(function(x){return cur=="Todos"||x.cat==cur}).map(function(x){
+return '<article class="card"><div class="pic" style="--c:'+x.c+'" aria-hidden="true">'+x.e+'</div><div class="b"><h3>'+x.n+'</h3><small>'+x.d+'</small><div class="row"><span class="price">'+money(x.p)+'</span><button class="add" data-a="'+x.id+'">Agregar</button></div></div></article>'}).join("")}
+function render(){
+var ids=Object.keys(cart),n=0,s=0,txt="";
+ids.forEach(function(i){n+=cart[i];s+=cart[i]*P[i].p});
+$("cnt").textContent=n;$("sub").textContent=money(s);
+$("items").innerHTML=ids.length?ids.map(function(i){var x=P[i];return '<div class="item"><span>'+x.e+' '+x.n+'</span><b>'+money(x.p*cart[i])+'</b><div class="qty"><button data-m="'+i+'" aria-label="Quitar uno">−</button><span>'+cart[i]+'</span><button data-p="'+i+'" aria-label="Agregar uno">+</button><button class="rm" data-r="'+i+'">Quitar</button></div></div>'}).join(""):'<div class="empty">Tu carreta está vacía. Agrega productos del catálogo.</div>';
+var ok=n>0&&$("to").value.trim()&&$("addr").value.trim()&&$("from").value.trim();
+var pk=document.querySelector("input[name=pk]:checked").value;
+txt="Hola, quiero hacer este pedido:%0A"+ids.map(function(i){return "- "+cart[i]+" x "+P[i].n}).join("%0A")+"%0ASubtotal: "+money(s)+"%0APresentación: "+pk+"%0AMensaje: "+encodeURIComponent($("msg").value)+"%0AEnvía: "+encodeURIComponent($("from").value)+" ("+encodeURIComponent($("tel").value)+")%0ARecibe: "+encodeURIComponent($("to").value)+"%0ADirección: "+encodeURIComponent($("addr").value);
+$("send").href="https://wa.me/"+WHATSAPP+"?text="+txt;
+$("send").setAttribute("aria-disabled",ok?"false":"true");
+}
+function drawer(on){$("drawer").classList.toggle("on",on);$("ov").classList.toggle("on",on);$("drawer").setAttribute("aria-hidden",!on);if(on)$("close").focus()}
+document.addEventListener("click",function(e){var t=e.target,d=t.dataset;
+if(d.c){cur=d.c;tabs();grid()}
+if(d.a!==undefined){cart[d.a]=(cart[d.a]||0)+1;render()}
+if(d.p!==undefined){cart[d.p]++;render()}
+if(d.m!==undefined){if(--cart[d.m]<1)delete cart[d.m];render()}
+if(d.r!==undefined){delete cart[d.r];render()}
+if(t.id=="open")drawer(true);
+if(t.id=="close"||t.id=="ov")drawer(false)});
+document.addEventListener("input",render);
+document.addEventListener("keydown",function(e){if(e.key=="Escape")drawer(false)});
+var db=null,usr=null,unsub=null,orders=[];
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+async function initCaps(){
+ if(!window.claude)return;
+ try{usr=await claude.use('user');db=await claude.use('db')}catch(e){}
+ if(!db)return;
+ $('send').textContent='Realizar pedido';
+ try{if(usr&&await usr.canEdit())$('adm').hidden=false}catch(e){}
+}
+$('send').addEventListener('click',async function(e){
+ if(!db)return;
+ e.preventDefault();
+ if($('send').getAttribute('aria-disabled')=='true')return;
+ var ids=Object.keys(cart),s=0;
+ var items=ids.map(function(i){s+=cart[i]*P[i].p;return{producto:P[i].n,categoria:P[i].cat,cantidad:cart[i],precio:P[i].p}});
+ var id='P'+Date.now().toString(36).toUpperCase();
+ var o={fecha:new Date().toISOString(),estado:'Nuevo',remitente:$('from').value.trim(),telefono:$('tel').value.trim(),destinatario:$('to').value.trim(),direccion:$('addr').value.trim(),presentacion:document.querySelector('input[name=pk]:checked').value,mensaje:$('msg').value.trim(),items:items,subtotal:s};
+ try{
+  o.id=id;
+  var uid=await usr.id(),ref=db.doc('orders/'+uid),snap=await ref.get();
+  await ref.set({pedidos:(snap.exists?(snap.data().pedidos||[]):[]).concat([o])});
+  cart={};['from','tel','to','addr','msg'].forEach(function(k){$(k).value=''});render();
+  $('items').innerHTML='<div class="ok">Pedido recibido. Tu código es '+id+'.<br>Te contactaremos para confirmar el impuesto y el envío.</div>';
+ }catch(err){$('items').insertAdjacentHTML('afterbegin','<div class="empty" style="color:var(--coral)">No se pudo enviar el pedido. Intenta de nuevo.</div>')}
+});
+function drawAdmin(){
+ $('acount').textContent=orders.length+' pedidos';
+ $('atab').innerHTML=orders.length?'<table><thead><tr><th>Código</th><th>Fecha</th><th>Envía</th><th>Recibe</th><th>Dirección</th><th>Presentación</th><th>Artículos</th><th>Subtotal</th></tr></thead><tbody>'+orders.map(function(o){return '<tr><td>'+esc(o.id)+'</td><td>'+esc(new Date(o.fecha).toLocaleString('es-HN'))+'</td><td>'+esc(o.remitente)+'<br>'+esc(o.telefono)+'</td><td>'+esc(o.destinatario)+'</td><td>'+esc(o.direccion)+'</td><td>'+esc(o.presentacion)+(o.mensaje?'<br><i>'+esc(o.mensaje)+'</i>':'')+'</td><td>'+(o.items||[]).map(function(i){return esc(i.cantidad+' x '+i.producto)}).join('<br>')+'</td><td>'+money(o.subtotal||0)+'</td></tr>'}).join('')+'</tbody></table>':'<p class="empty">Todavía no hay pedidos.</p>';
+}
+function openAdmin(){
+ $('admin').hidden=false;
+ if(unsub)return;
+ unsub=db.collection('orders').onSnapshot(function(s){orders=[].concat.apply([],s.docs.map(function(d){return d.data().pedidos||[]})).sort(function(a,b){return a.fecha<b.fecha?1:-1});drawAdmin()},function(){$('atab').innerHTML='<p class="empty">No se pudieron cargar los pedidos.</p>'});
+}
+async function exportXl(){
+ var dl=await claude.use('downloads');
+ if(!dl||!window.XLSX||!orders.length)return;
+ var A=orders.map(function(o){return{Código:o.id,Fecha:new Date(o.fecha).toLocaleString('es-HN'),Estado:o.estado,Remitente:o.remitente,Teléfono:o.telefono,Destinatario:o.destinatario,Dirección:o.direccion,Presentación:o.presentacion,Mensaje:o.mensaje,Subtotal:o.subtotal}});
+ var B=[];orders.forEach(function(o){(o.items||[]).forEach(function(i){B.push({Código:o.id,Producto:i.producto,Categoría:i.categoria,Cantidad:i.cantidad,Precio:i.precio,Total:i.cantidad*i.precio})})});
+ var wb=XLSX.utils.book_new();
+ XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(A),'Pedidos');
+ XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(B),'Detalle');
+ var buf=XLSX.write(wb,{bookType:'xlsx',type:'array'});
+ try{await dl.save({filename:'pedidos-'+new Date().toISOString().slice(0,10)+'.xlsx',data:new Blob([buf],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'})})}catch(e){}
+}
+$('adm').addEventListener('click',openAdmin);
+$('aclose').addEventListener('click',function(){$('admin').hidden=true});
+$('xl').addEventListener('click',exportXl);
+tabs();grid();render();initCaps();
+</script>
+
+<button id="chatfab" type="button" aria-expanded="false" aria-controls="chat">💬 Pregúntanos</button>
+<section id="chat" role="dialog" aria-label="Asistente de compras de Sabor Catracho">
+<div class="chh"><div><b>Asistente Sabor Catracho</b><small>Asistente con IA · puede equivocarse</small></div><button id="chatx" type="button" aria-label="Cerrar el chat">×</button></div>
+<div id="chatlog" aria-live="polite"></div>
+<div class="chtools"><button id="chatclr" type="button">Limpiar conversación</button><a id="chatwa" target="_blank" rel="noopener">Hablar por WhatsApp</a></div>
+<div class="chnote">No compartas datos personales (dirección, teléfono).</div>
+<div class="chform"><input id="chatin" maxlength="300" placeholder="Escribe tu pregunta…" autocomplete="off" aria-label="Tu pregunta"><button id="chatsend" class="add" type="button">Preguntar</button></div>
+</section>
+<script>
+(function(){
+var ENDPOINT="/.netlify/functions/asistente",MAX_MENSAJES=20;
+var hist=[],enviados=0,ocupado=false;
+var g=function(id){return document.getElementById(id)};
+var panel=g("chat"),fab=g("chatfab"),log=g("chatlog"),inp=g("chatin"),btn=g("chatsend");
+g("chatwa").href="https://wa.me/"+WHATSAPP;
+function abrir(on){panel.classList.toggle("on",on);fab.setAttribute("aria-expanded",on);if(on){if(!log.children.length)saludo();inp.focus()}}
+function bajar(){log.scrollTop=log.scrollHeight}
+function msg(rol,texto){var d=document.createElement("div");d.className="msg "+rol;d.textContent=texto;log.appendChild(d);bajar();return d}
+function tarjeta(p){
+ var i=parseInt(p.id.slice(1),10)-1,x=P[i];if(!x)return;
+ var c=document.createElement("div");c.className="pcard";
+ var e=document.createElement("div");e.className="pe";e.style.setProperty("--c",x.c);e.textContent=x.e;
+ var t=document.createElement("div");t.className="pi";
+ var n=document.createElement("b");n.textContent=p.nombre;
+ var s=document.createElement("span");s.textContent=p.presentacion+" · "+money(p.precio);
+ t.appendChild(n);t.appendChild(s);
+ var b=document.createElement("button");b.className="add";b.type="button";b.setAttribute("data-a",i);b.textContent="Agregar";
+ c.appendChild(e);c.appendChild(t);c.appendChild(b);log.appendChild(c);
+}
+function saludo(){msg("bot","¡Hola! Soy el asistente de Sabor Catracho. Cuéntame qué buscas o cuál es tu presupuesto y te ayudo a armar la carreta.")}
+async function enviar(){
+ var t=inp.value.trim();
+ if(!t||ocupado)return;
+ if(enviados>=MAX_MENSAJES){msg("bot","Llegaste al límite de mensajes de esta sesión. Escríbenos por WhatsApp y con gusto te atendemos.");return}
+ ocupado=true;btn.disabled=true;inp.value="";enviados++;
+ msg("user",t);
+ var espera=msg("bot wait","Escribiendo…");
+ try{
+  var r=await fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({mensaje:t,historial:hist.slice(-6)})});
+  var d=await r.json().catch(function(){return{}});
+  espera.remove();
+  if(!r.ok||!d.texto)throw new Error(d.error||"error");
+  msg("bot",d.texto);
+  (d.productos||[]).forEach(tarjeta);bajar();
+  hist.push({rol:"user",texto:t},{rol:"model",texto:d.texto});
+ }catch(err){
+  espera.remove();
+  msg("bot","No pude responder en este momento. Intenta de nuevo o escríbenos por WhatsApp con el botón de abajo.");
+ }
+ ocupado=false;btn.disabled=false;inp.focus();
+}
+fab.addEventListener("click",function(){abrir(!panel.classList.contains("on"))});
+g("chatx").addEventListener("click",function(){abrir(false)});
+g("chatclr").addEventListener("click",function(){hist=[];log.innerHTML="";saludo()});
+btn.addEventListener("click",enviar);
+inp.addEventListener("keydown",function(e){if(e.key=="Enter"){e.preventDefault();enviar()}});
+log.addEventListener("click",function(e){var b=e.target;if(b.classList&&b.classList.contains("add")){b.textContent="Agregado ✓"}});
+})();
+</script>
+</body>
+</html>
