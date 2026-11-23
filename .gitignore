@@ -1,0 +1,5 @@
+.env
+node_modules/
+.netlify/
+resultados.txt
+__pycache__/
